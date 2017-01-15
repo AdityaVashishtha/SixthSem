@@ -114,16 +114,14 @@ void display(int lane) {
 }
 
 void search(char reg[]) {
-      
+     //todo for search 
 }
 
 void show_parking() {
-      int i=0;
-      printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
+      int i=0;      
       for(i=0;i<5;i++) {
             display(i);
-      }
-      printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
+      }      
 }
 
 int menu() {
