@@ -96,6 +96,8 @@ void dequeueAtRear(int lane)  {
       return;
 }
 
+/* deletion at a special position*/
+
 /* display elements present in the queue */
 void display(int lane) {
       struct node *temp;
@@ -113,8 +115,30 @@ void display(int lane) {
       printf("\n");
 }
 
-void search(char reg[]) {
-     //todo for search 
+int search(char reg[]) {
+     struct node *temp;
+     int i,flag=0,lane;
+     for(i=0;i<5;i++) {
+           lane=i;
+           if (lane_head[lane]->next == lane_tail[lane]) {
+                  //printf("Lane_%d is empty\n",lane);
+                  return -1;
+            }
+            
+            temp = lane_tail[lane]->prev;
+            while(temp!=lane_head[lane]) {
+                  if(strcmp(reg,temp->reg_no)==0) {
+                        printf("%s Car is in %d Lane arrived at %d time \n",reg,i+1,temp->data);
+                        flag=1;
+                        break;
+                  }
+                  temp= temp->prev;
+            }
+     } if(flag==0) {
+           printf("no vehical found\n");
+           return -1;
+     }
+     return lane;
 }
 
 void show_parking() {
@@ -135,6 +159,13 @@ int menu() {
       printf("5. Search a Car\n");
       scanf("%d",&choice);
       return choice;
+}
+
+void remove_car(char reg[]) {
+      int lane=search(reg);
+      if(lane>=0){
+            dequeueAtSpecial(char reg,int lane);
+      }
 }
 
 
@@ -172,6 +203,21 @@ int main() {
             switch(choice){
                   case 1: show_parking();break;
                   case 2: printf("Input Lane no: \n");scanf("%d",&choice);display(choice-1);break;
+                  case 3: printf("Enter reg_no: \n");
+                        scanf("%s",reg_no);
+                        printf("Enter time\n");
+                        scanf("%d",&tim);
+                        if(time_unit<=tim) {
+                              time_unit=tim;
+                              //printf("%s %d\n", reg_no,tim);
+                              car_count++;
+                              car_insert(tim,reg_no,(car_count-1)%5);  
+                        } else {
+                              printf("INVAILD TIME\n");
+                        }
+                        break;
+                  case 4: printf("Enter the regestration num \n");scanf("%s",reg_no);remove_car(reg_no);break;
+                  case 5: printf("Enter the regestration num \n");scanf("%s",reg_no);search(reg_no);break;
                   default: printf("wrong choice\n");
             }
       }
