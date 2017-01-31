@@ -5,7 +5,7 @@ def powerUsingNthRoot(a,b):
 #this method uses expansion of a^x for calculating power of numbers
 def powerUsingExpansion(a,b):
     from math import log,factorial
-    MAX = 15
+    MAX = 150
     result = 0
     fact = 1
     for i in range(0,MAX):
@@ -33,8 +33,8 @@ from time import time
 t1 = time()
 x = pow(a,b)
 print "Excecution time:", round(time()-t1, 3), "s"
-print "Method 1 Using default function : %.4f" % x
+print "Method 1 Using default function :", x
 
 t1 = time()
-print "Method 2 Using Expantion Series : %.4f" % powerUsingExpansion(a,b)
-print "Excecution time:", round(time()-t1, 3), "s"
+print "Method 2 Using Expantion Series :",powerUsingExpansion(a,b)
+print "Excecution time:", round(time()-t1, 15), "s"

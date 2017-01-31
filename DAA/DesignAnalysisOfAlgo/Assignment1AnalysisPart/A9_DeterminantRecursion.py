@@ -33,5 +33,7 @@ a = [[0 for i in range(0,N)] for j in range(0,N)]
 for i in range(0,N):
     for j in range(0,N):
         a[i][j]=input()
-    
+from time import time
+t1 = time()   
 print "Determinant is : ",determinant(a,0,0)
+print "Excecution time:", round(time()-t1, 3), "s"

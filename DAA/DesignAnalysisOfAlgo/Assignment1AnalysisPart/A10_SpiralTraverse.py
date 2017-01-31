@@ -26,8 +26,11 @@ a = [[0 for x in range(0,N)] for x in range(0,N)]
 for i in range(0,N):
     for j in range(0,N):
         a[i][j]=input()
+from time import time
+t1 = time()
 print "Spiral Tracing as :: "
 spiralTrace(a,len(a))
+print "Excecution time:", round(time()-t1, 3), "s"
     
     
 
