@@ -12,7 +12,7 @@ int main() {
 	int i,j,flag,temp;
 	flag=1;
 	for(i=0;i<n;i++) {
-		a[i] = (rand()%n*10) +1;
+		a[i] = n-i;//(rand()%n*10) +1;
 	}
 	start_t = clock();
 	int swapCount=0;
@@ -30,7 +30,7 @@ int main() {
 	for(i=0;i<n;i++) {
 		printf("%d \n",a[i]);
 	}
-	printf("Total Swapped: %d \n",swapCount++);		
+	printf("Total Swapped in INSERTION: %d \n",swapCount++);		
 	total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
     printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }

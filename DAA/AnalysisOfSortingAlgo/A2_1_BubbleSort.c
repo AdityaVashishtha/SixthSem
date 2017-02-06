@@ -11,7 +11,7 @@ int main() {
 	int i,j,flag,temp;
 	flag=1;
 	for(i=0;i<n;i++) {
-		a[i] = (rand()%n*10) +1;
+		a[i] = i;//(rand()%n*10) +1;
 	}
 	start_t = clock();
 	int swapCount=0;

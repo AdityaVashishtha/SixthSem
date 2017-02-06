@@ -58,7 +58,7 @@ int main() {
     scanf("%d",&n);
     int a[n];
     for(i=0;i<n;i++) {
-        a[i]=(rand()%n*10) +1;
+        a[i]= n-i;//(rand()%n*10) +1;
     }
     start_t = clock();
     merge_sort(a,0,n-1);  
@@ -67,7 +67,7 @@ int main() {
         printf("%d \n",a[i]);
     }
 
-    printf("Total Swapped: %d \n",swapCount++);	
+    printf("Total Swapped in MergeSort: %d \n",swapCount++);	
     total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
     printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }

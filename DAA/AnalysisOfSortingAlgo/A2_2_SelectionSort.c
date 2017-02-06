@@ -15,23 +15,30 @@ int main() {
 	}
 	start_t = clock();
 	int swapCount=0;
-	for(i=0;i<n && flag==1;i++) {		
-		flag=0;
-		for(j=i+1;j<n;j++) {
-			if(a[i]>a[j]) {
-				temp = a[i];
-				a[i]=a[j];
-				a[j]=temp;
-				flag = 1;
-				swapCount++;
+	
+	for (i = 0; i < n-1; i++) 
+	{		
+		int iMin = i;
+		for (j = i+1; j < n; j++) {
+			if (a[j] < a[iMin]) {
+					iMin = j;
 			}
 		}
+		if(iMin != i) 
+		{
+			temp = a[iMin];
+			a[iMin]=a[j];
+			a[j]=temp;			
+			swapCount++;			
+		}
 	}
+
+
 	end_t = clock();    
 	for(i=0;i<n;i++) {
 		printf("%d \n",a[i]);
 	}
-	printf("Total Swapped: %d \n",swapCount++);	
+	printf("Total Swapped in Selection: %d \n",swapCount++);	
 	total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
     printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }

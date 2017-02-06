@@ -38,7 +38,7 @@ int main() {
     scanf("%d",&n);
     int a[n];
     for(i=0;i<n;i++) {
-        a[i]=(rand()%n*10) +1;
+        a[i]= (rand()%n*10) +1;
     }
     start_t = clock();
     quickSort(a,0,n-1);  
@@ -48,7 +48,7 @@ int main() {
     }
 
 
-    printf("Total Swapped: %d \n",swapCount++);	
+    printf("Total Swapped in QuickSort: %d \n",swapCount++);	
     total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
     printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }
