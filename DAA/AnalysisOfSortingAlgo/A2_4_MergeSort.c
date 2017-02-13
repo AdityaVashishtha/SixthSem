@@ -35,7 +35,7 @@ int merge_list(int a[],int lo,int m,int hi) {
             a[k]=r[j];
             j++;
         }
-        swapCount++;
+        //swapCount++;
         k++;
     }
 
@@ -67,7 +67,7 @@ int main() {
         printf("%d \n",a[i]);
     }
 
-    printf("Total Swapped in MergeSort: %d \n",swapCount++);	
+    //printf("Total Swapped in MergeSort: %d \n",swapCount++);	
     total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
     printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }
