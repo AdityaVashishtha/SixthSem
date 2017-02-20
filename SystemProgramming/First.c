@@ -29,6 +29,23 @@ int checkEps(char a[]) {
     return 1;
 }
 
+int removeMultipul(char r[]) {
+    int k = 0,j=0,flag=0;
+    strcpy(result," ");
+    while(r[k] !=0 ) {
+        j=0;
+        flag=0;
+        while(result[j] != 0) {
+            if(result[j] == r[k]) {
+                flag=1;
+            }   
+            j++;
+        }
+        if(flag==0)
+            result[j]=r[k];
+        k++;
+    }    
+}
 
 int firstOf(char a[]) {    
     char nt;    
@@ -49,20 +66,24 @@ int firstOf(char a[]) {
                 else {
                     for(i=0;i<num;i++){
                         if( p[i][0] == a[index]) {
-                                firstOf(p[i]);
-                                flag=1;                                
-                                if(checkEps(p[i]))
-                                    break;                                               
-                                //printf("# ");   
-                                result[count++]='#';                                          
-                                continue;
+                                firstOf(p[i]);                                
+                                flag=1;
+                                if(checkEps(p[i])) {
+                                    flag=1;
+                                    break;                                                                                                                                                                               
+                                }
+                                flag=0;
+                                //printf("# "); 
+                                result[count++]='#';                                    
                         }
+                    } if (flag==1) {
+                        break;
                     }
                 }
                 index++;
-            }
+            }            
             if (flag==1)
-            {
+            {   
                 while(a[index]!='|' && a[index]!=0) {
                     index++;
                 }   
@@ -74,8 +95,8 @@ int firstOf(char a[]) {
         puts("Grammar is LEFT RECURSIVE\n");
     }    
     result[count]='\0';
-  //  puts(result);
-  //  puts("\n");
+    //puts(result);
+    //puts("\n");
 }
 
 int main() {
@@ -95,8 +116,9 @@ int main() {
         count=0;
         strcpy(result," ");
         printf("First(%s) ",p[i]);
-        firstOf(p[i]);  
-        puts(result)      ;
+        firstOf(p[i]);     
+        removeMultipul(result);     
+        puts(result);
         puts("\n");
     }
 }
