@@ -30,14 +30,20 @@ int checkEps(char a[]) {
 }
 
 int removeMultipul(char r[]) {
-    int k = 0,j=0,flag=0;
-    strcpy(result," ");
-    while(r[k] !=0 ) {
+    //printf("__%s\t",r);
+    int k = 0,j=0,flag=0;        
+    while(result[j] != 0) {
+        result[j]='\0';
+        j++;
+    }
+
+    while(r[k] != 0 ) {
         j=0;
-        flag=0;
-        while(result[j] != 0) {
-            if(result[j] == r[k]) {
+        flag=0;       
+        while(result[j] != 0) {            
+            if(result[j] == r[k]) {                
                 flag=1;
+                break;
             }   
             j++;
         }
@@ -45,6 +51,7 @@ int removeMultipul(char r[]) {
             result[j]=r[k];
         k++;
     }    
+    result[j+1]='\0';
 }
 
 int firstOf(char a[]) {    
@@ -103,7 +110,7 @@ int main() {
     char nt;
     char b;
     char *r;
-    char first[20];
+    char first[20],temp[100];
     int index=3,i;
     printf("Number of Production : \n");
     scanf("%d",&num);
@@ -116,9 +123,9 @@ int main() {
         count=0;
         strcpy(result," ");
         printf("First(%s) ",p[i]);
-        firstOf(p[i]);     
-        removeMultipul(result);     
+        firstOf(p[i]);    
+        strcpy(temp,result); 
+        removeMultipul(temp);     
         puts(result);
-        puts("\n");
     }
 }
