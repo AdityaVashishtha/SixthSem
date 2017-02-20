@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 int halfTernarySearch(int arr[], int l, int r, int x)
 {
@@ -13,17 +14,22 @@ int halfTernarySearch(int arr[], int l, int r, int x)
     return -1;
 }
 
-int main()
-{
+int main() {
+    clock_t start_t, end_t, total_t;    
     int n=1000;
+    printf("Enter a element to search : \n");
+    scanf("%d",&n);
     int a[n];
     int i;
     for(i=0;i<n;i++) {
         a[i]=i+1;
-    }
-    printf("Enter a element to search : \n");
-    scanf("%d",&i);
+    }    
+    i=n+1;
+    start_t = clock();
     int at = halfTernarySearch(a,0,n-1,i);
+    end_t = clock();    
     if(at>=0)
         printf("Element found at %d \n",at+1);
+    total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
+    printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }

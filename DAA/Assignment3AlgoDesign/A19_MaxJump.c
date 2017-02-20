@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int MaxJump(int a[],int l,int r,int * m,int * mi) {
     int max = *m;
@@ -49,6 +50,7 @@ int MaxJump(int a[],int l,int r,int * m,int * mi) {
 }
 
 int main() {
+    clock_t start_t, end_t, total_t;    
     printf("Enter Number of Input\n");
 	int n,i;	
 	scanf("%d",&n);
@@ -63,6 +65,10 @@ int main() {
 	printf("\n");
 	int max;
 	int min;
+    start_t = clock();
 	int diff = MaxJump(a,0,n-1,&max,&min);
+    end_t = clock();    
 	printf("Max %d, Min %d,diff %d \n",max,min,diff);
+    total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
+    printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }

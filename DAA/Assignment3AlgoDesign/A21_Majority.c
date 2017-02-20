@@ -8,7 +8,7 @@ int main() {
 	int n,i;
 	printf("Enter Number of elements\n");
 	scanf("%d",&n);
-	int x=1000;
+	int x=n;
 	int hash[x];
 	for(i=0;i<x;i++) {
 		hash[i]=0;

@@ -76,14 +76,21 @@ def closestStart(a):
     print "With Distance :: ",d
 
 
+MAX = 1000000
+from random import randint
 print "Enter number of points to enter::"
 n=input()
 a=[[0,0] for i in range(0,n)]
 print "Input in the form:: x y"
 for i in range(0,n):
-    x=[int(x) for x in raw_input().strip().split()]
+    x=[randint(0,MAX-1),randint(0,MAX-1)]
     a[i] = x
 
 #a = [[2, 3], [12, 30], [40, 50], [5, 1], [12, 10], [12, 4]]
-
-closestStart(a)
+print a
+from time import time
+t0 = time()
+if(len(a)>1):
+    closestStart(a)
+t1 = time()
+print "Total Execution time :: ",round(t1-t0,5)

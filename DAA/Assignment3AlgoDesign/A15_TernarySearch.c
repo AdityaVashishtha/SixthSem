@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 void ternarySearch(int a[],int x,int l,int r) {
     if(l<=r) {
@@ -22,13 +23,18 @@ void ternarySearch(int a[],int x,int l,int r) {
 
 
 int main() {
-    int n=1000;
+    clock_t start_t, end_t, total_t;    
+    int n=100;
+    printf("Enter a element to search : \n");
+    scanf("%d",&n);
     int a[n];
     int i;
     for(i=0;i<n;i++) {
         a[i]=i;
-    }
-    printf("Enter a element to search : \n");
-    scanf("%d",&i);
-    ternarySearch(a,i,0,n-1);
+    }    
+    start_t = clock();
+    ternarySearch(a,n/2,0,n-1);
+    end_t = clock();    
+    total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
+    printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }

@@ -20,7 +20,12 @@ def multiply(a,b):
 print "Enter numbers"
 a=input()
 b=input()
+lenA = len(str(a))
+from time import time
+t0 = time()
 if a>b:
     print "Result of multiplication is :: ",multiply(a,b)
 else:
     print "Result of multiplication is :: ",multiply(b,a)
+t1 = time()
+print "Total Execution time :: ",round(t1-t0,3),"For ",lenA," digits"
