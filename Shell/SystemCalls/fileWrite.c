@@ -15,6 +15,6 @@ int main() {
     char buf[BUFMAX];
     scanf("%[^\t]",buf);
     int fd_to;
-    fd_to=open(to_file,O_RDWR|O_CREAT|O_TRUNC);    
+    fd_to=open(to_file,O_RDWR|O_APPEND|O_CREAT);    
     write(fd_to,buf,strlen(buf));
 }
