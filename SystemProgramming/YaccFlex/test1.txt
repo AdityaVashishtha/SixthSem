@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+    int i,j;
+    printf("This is good");
+    myfun();
+    i = 0;
+    int testVar = i;
+    
+}
