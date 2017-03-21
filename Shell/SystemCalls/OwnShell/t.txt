@@ -1,0 +1,11 @@
+a.out
+execl.c
+fileCopy.c
+fileRead.c
+fileWrite.c
+fork.c
+OwnShell
+test.txt
+						wait();
+						wait();
+					wait();
