@@ -9,3 +9,6 @@ test.txt
 						wait();
 						wait();
 					wait();
+a.out
+myShell.c
+t.txt
