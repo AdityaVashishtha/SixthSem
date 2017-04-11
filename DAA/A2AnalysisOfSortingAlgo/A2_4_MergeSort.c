@@ -2,10 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int swapCount=0;
-
 int merge_list(int a[],int l,int m,int h);
-
 int merge_sort(int a[],int l,int h) {    
     if(l<h){
         int mid = (l+h)/2;
@@ -35,7 +32,6 @@ int merge_list(int a[],int lo,int m,int hi) {
             a[k]=r[j];
             j++;
         }
-        //swapCount++;
         k++;
     }
 
@@ -66,8 +62,6 @@ int main() {
     for(i=0;i<n;i++) {
         printf("%d \n",a[i]);
     }
-
-    //printf("Total Swapped in MergeSort: %d \n",swapCount++);	
     total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
     printf("Total time taken by CPU: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }

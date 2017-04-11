@@ -50,6 +50,8 @@ print "Enter 3 Strings ::"
 X = raw_input()
 Y = raw_input()
 Z = raw_input()
+from time import time
+t0 = time()
 c,b = LongestSubSequence(X,Y,Z)
 m = len(X)
 n = len(Y)
@@ -57,3 +59,6 @@ o = len(Z)
 print c[m-1][n-1][o-1]
 printLCS(b,X,m-1,n-1,o-1)
 print ""
+
+t1 = time()
+print "Total Execution time :: ",(t1-t0)

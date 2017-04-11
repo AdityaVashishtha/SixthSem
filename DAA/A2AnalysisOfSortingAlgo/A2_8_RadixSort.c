@@ -11,7 +11,6 @@ int getMax(int arr[], int n)
             mx = arr[i];
     return mx;
 }
-
 int countsort(int a[],int n,int exp) {    
     int count[10];
     int i=0;
@@ -42,8 +41,6 @@ int countsort(int a[],int n,int exp) {
     }
 
 }
-
-
 void radixsort(int a[],int n) {
     int max = getMax(a, n);
     int exp;
@@ -63,10 +60,7 @@ int main() {
     }
     start_t = clock();
     radixsort(a,n);  
-    end_t = clock();
-    // for(i=0;i<n;i++) {
-    //     printf("%d \n",a[i]);
-    // }    
+    end_t = clock(); 
     total_t = ((double)(end_t - start_t) / CLOCKS_PER_SEC)*CLOCKS_PER_SEC;
     printf("Total time taken by CPU in: %f\n", (double)total_t/(double)CLOCKS_PER_SEC );
 }

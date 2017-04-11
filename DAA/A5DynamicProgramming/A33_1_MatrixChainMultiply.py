@@ -31,9 +31,12 @@ def printOrder(S,i,j):
         printOrder(S,S[i][j]+1,j)
         sys.stdout.write(")")
 
-
+print "Number of input"
+N = input()
 print "Enter sizes of matrix:: "
 a = [int(x) for x in raw_input().strip().split()]
+from time import time
+t0 = time()
 M,S = matrixChainOrder(a)
 print "Min Multiplication required :: ", M
 print "Order of Multiplication ::"

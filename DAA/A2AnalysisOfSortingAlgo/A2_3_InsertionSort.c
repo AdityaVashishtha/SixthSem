@@ -9,10 +9,7 @@ void insertionSort(int arr[], int n)
    {
        key = arr[i];
        j = i-1;
- 
-       /* Move elements of arr[0..i-1], that are
-          greater than key, to one position ahead
-          of their current position */
+        
        while (j >= 0 && arr[j] > key)
        {
            arr[j+1] = arr[j];
@@ -37,16 +34,7 @@ int main() {
 	start_t = clock();
 	int swapCount=0;
 	insertionSort(a,n);
-	// for(i=0;i<n-1;i++) {
-	// 	for(j=i+1;j>0;j--) {
-	// 		if(a[j] <= a[j-1]) {
-	// 			temp=a[j];
-	// 			a[j] = a[j-1];
-	// 			a[j-1]=temp;
-	// 			swapCount++;
-	// 		} else break;	
-	// 	}
-	// }
+	
 	end_t = clock();    
 	for(i=0;i<n;i++) {
 		printf("%d \n",a[i]);
